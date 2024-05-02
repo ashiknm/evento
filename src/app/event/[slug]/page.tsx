@@ -1,6 +1,5 @@
 import H1 from "@/components/h1";
 import { getEvent } from "@/lib/server-utils";
-import { capitalize, sleep } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -10,6 +9,8 @@ type Props = {
   };
 };
 
+
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
@@ -17,6 +18,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: event.name,
+    openGraph: {
+      title: event.name,
+      description: 'Browse more than 10,000 events worldwide',
+      url: 'https://evento-neon-six.vercel.app/',
+      siteName: event.name,
+      images: [
+        {
+          url: event.imageUrl,
+          width: 800,
+          height: 600,
+        }
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
   };
 }
 

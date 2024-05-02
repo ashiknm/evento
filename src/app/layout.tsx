@@ -8,8 +8,24 @@ import Container from '@/components/container'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Evento - Find events around you',
-  description: 'Browse more than 10,000 events worldwide',
+  // title: 'Evento - Find events around you',
+  // description: 'Browse more than 10,000 events worldwide',
+
+  openGraph: {
+    title: 'Evento',
+    description: 'Browse more than 10,000 events worldwide',
+    url: 'https://evento-neon-six.vercel.app/',
+    siteName: 'Evento',
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1642178225043-f299072af862?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=100",
+        width: 800,
+        height: 600,
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
