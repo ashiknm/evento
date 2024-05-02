@@ -17,6 +17,12 @@ export default async function Image({ params }: { params: { slug: string } }) {
   return new ImageResponse(
     (
       <section>
+         <img
+          src={event.imageUrl}
+          alt=""
+          tw="flex-1 w-full h-full"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
         <h1>{event.name}</h1>
         <p>Evento - Browse events around you</p>
       </section>
